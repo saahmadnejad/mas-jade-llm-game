@@ -7,4 +7,6 @@ MTPs-Main-Container.txt
 APDescription.txt
 
 
-./.idea
+.idea
+generated
+*.args
