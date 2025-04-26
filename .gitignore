@@ -10,3 +10,5 @@ APDescription.txt
 .idea
 generated
 *.args
+
+target
