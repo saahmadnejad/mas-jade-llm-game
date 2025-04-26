@@ -4,8 +4,8 @@ import ir.donbee.mas.jade.util.AgentUtil;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 
-public class MainBehaviour extends CyclicBehaviour {
-    public MainBehaviour(Agent agent) {
+public class BuggyBehaviour extends CyclicBehaviour {
+    public BuggyBehaviour(Agent agent) {
         super(agent);
     }
 
@@ -13,7 +13,10 @@ public class MainBehaviour extends CyclicBehaviour {
     public void action() {
         try {
             System.out.println(myAgent.getLocalName() + ": Trying to execute buggyMethod...");
-            AgentUtil.buggyMethod(); // This method will cause an NPE
+
+            String data = null;
+            int length = data.length(); // 🚨 This will cause an NPE
+
         } catch (Exception e) {
             System.out.println(myAgent.getLocalName() + ": ERROR OCCURRED - " + e.getMessage());
             AgentUtil.notifyController("EXCEPTION:NPE:" + e.getMessage(), this.getAgent());

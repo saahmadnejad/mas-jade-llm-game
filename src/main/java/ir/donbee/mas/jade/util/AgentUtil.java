@@ -20,12 +20,6 @@ public final class AgentUtil {
         throw new IllegalStateException("Utility class");
     }
 
-    // Simulated faulty method (Throws NPE)
-    public static void buggyMethod() {
-        String data = null;
-        int length = data.length(); // 🚨 This will cause an NPE
-    }
-
     // Notify ControllerAgent about an issue
     public static void notifyController(String message, Agent agent) {
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
